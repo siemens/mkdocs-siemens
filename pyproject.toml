@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "mkdocs-siemens"
+version = "0.0.1"
+description = "A placeholder package for the Siemens MkDocs theme"
+license = "MIT"
+readme = "README.md"
+authors = ["Siemens Open Source <opensource@siemens.com>"]
+homepage = "https://opensource.siemens.com"
+repository = "https://github.com/mkdocs-siemens"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
