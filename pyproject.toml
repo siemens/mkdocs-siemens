@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mkdocs-siemens"
-version = "0.0.1"
+version = "0.0.2"
 description = "A placeholder package for the Siemens MkDocs theme"
 license = "MIT"
 readme = "README.md"
