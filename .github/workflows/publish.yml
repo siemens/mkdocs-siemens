@@ -8,15 +8,16 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
         python-version: "3.11"
     - name: Install poetry
-      run: python3 -m pip install --user poetry==1.3.1
-    - name: Publish
-      env:
-        POETRY_HTTP_BASIC_PYPI_USERNAME: __token__
-        POETRY_HTTP_BASIC_PYPI_PASSWORD: ${{ secrets.PYPI_TOKEN }}
-      run: poetry publish --build
+      run: python3 -m pip install --user poetry==1.8.3
+    - name: Build wheel
+      run: poetry build
+    - name: Publish package to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
